@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'MyFont'; /*a name to be used later*/
+    src: url('/fonts/BEBAS___.ttf'); /*URL to font*/
+}
+html{
+    height: 100%;
+    font-family: MyFont;
+}
+body{
+    height: 100%;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+@import "dropdown-directive.scss";
+@import "header-directive.scss";
+@import "mobile-css.scss";
+@import "tile-directive.scss";
+@import "type.scss";

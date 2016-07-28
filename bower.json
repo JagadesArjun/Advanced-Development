@@ -1,0 +1,30 @@
+{
+  "name": "advanced",
+  "main": "index.js",
+  "version": "0.0.0",
+  "authors": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "1.3.4",
+    "angular-cookies": "~1.2.16",
+    "angular-resource": "~1.2.16",
+    "angular-route": "~1.2.14",
+    "angular-flot": "^0.0.6",
+    "bootstrap": "latest",
+    "jquery-ui": "~1.11.2",
+    "jquery": "~2.2.0",
+    "bootstrap-sass-official": "3.3.x",
+    "angular-bootstrap": "~0.12.1",
+    "bootstrap-css": "latest"
+  },
+  "devDependencies": {
+  },
+  "resolutions": {
+    "angular": "1.3.4"
+  }
+}

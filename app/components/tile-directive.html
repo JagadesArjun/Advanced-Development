@@ -1,0 +1,24 @@
+<div class="tile_" ng-repeat="data in tileData">
+    <div class="tile">
+        <div class="tile-header">
+            <b>{{data.name}}</b>
+            <span class="tile-status-open" align="center" ng-if="data.status === 'open'">Open Now</span>
+            <span class="tile-status-too-close" align="center" ng-if="data.status === 'tooclose'">Too close</span>
+            <span class="tile-status-closed" align="center" ng-if="data.status === 'closed'">closed</span>
+            <span class="tile-status-leave" align="center" ng-if="data.status === 'noshopday'">No shop day</span>
+        </div>
+        <div class="tile-middle" >
+            <img src="{{img.url}}" ng-repeat="img in data.img_url">
+        </div>
+        <div class="tile-middle-down">
+            <div class="tile-middle-down-add">
+                <b>Address: </b><br>{{data.address}}
+            </div>
+            <div class="tile-middle-down-status">
+                <div class="tile-middle-down-status-review">
+                    <div class="tile-middle-down-status-review-bar" ng-style="{width: data.review + '%'}"><span class="tile-middle-down-status-review-bar-text"><b>{{data.review}}%</b></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

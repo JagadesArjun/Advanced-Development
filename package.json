@@ -1,0 +1,27 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
+    "browser-sync": "latest",
+    "gulp-useref": "latest",
+    "gulp-uglify": "latest",
+    "gulp-cssnano": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-cache": "latest",
+    "run-sequence": "latest",
+    "del": "latest",
+    "gulp-minify": "latest",
+    "gulp-clean-css": "latest",
+    "gulp-htmlmin": "latest",
+    "gulp-concat": "latest"
+  }
+}
