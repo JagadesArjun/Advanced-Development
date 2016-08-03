@@ -1,18 +1,71 @@
 <div>
     <div align="center" class="center-body">
-        <div class="login-page">
+        <div class="login-page" ng-if="view">
+            <div class="headr-name">SHOP IS ON</div>
             <div class="inheader">
                 <b>LOGIN</b>
             </div>
-            <div class="form-data">
-                <form name="logForm">
-                    Email:<br>
-                    <input type="email" name="firstname" ng-model="emailId" required>
-                    <br>
-                    Password:<br>
-                    <input type="password" name="lastname" ng-model="password" required>
-                    <br><br>
-                    <button ng-click="login();">login</button>
+            <div class="log-form">
+                <form class="ui form" name="loginForm">
+                    <div class="field">
+                        <label>Email</label>
+                        <input type="email" name="email" placeholder="Email" ng-model="loginData.emailId" required>
+                        <p ng-show="loginForm.email.$invalid && !loginForm.email.$pristine" class="help-block">Enter a valid email.</p>
+                    </div>
+                    <div class="field">
+                        <label>Password</label>
+                        <input type="password" name="password" placeholder="Password" ng-model="loginData.password" required>
+                        <p ng-show="loginForm.password.$invalid && !loginForm.password.$pristine" class="help-block">Enter a password.</p>
+                    </div>
+                    <div class="ui buttons">
+                        <button class="ui button" ng-click="goHome()">Cancel</button>
+                        <div class="or"></div>
+                        <button class="ui positive button" ng-class="{ 'disabled' : loginForm.$invalid}" ng-click="login();">Login</button>
+                        <div class="or"></div>
+                        <button class="ui negative button" ng-click="switchView()">Signup</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="login-page" ng-if="!view">
+            <div class="headr-name">SHOP IS ON</div>
+            <div class="inheader">
+                <b>Signup</b>
+            </div>
+            <div class="log-form">
+                <form class="ui form" name="signupForm">
+                    <div class="field">
+                        <label>Username</label>
+                        <input type="text" name="username" placeholder="Username" ng-model="signupData.username" required>
+                        <p ng-show="signupForm.username.$invalid && !signupForm.username.$pristine" class="help-block">Enter a valid username.</p>
+                    </div>
+                    <div class="field">
+                        <label>FirstName</label>
+                        <input type="text" name="firstname" placeholder="Firstname" ng-model="signupData.firstname" required>
+                        <p ng-show="signupForm.firstname.$invalid && !signupForm.firstname.$pristine" class="help-block">Enter a valid firstname.</p>
+                    </div>
+                    <div class="field">
+                        <label>LastName</label>
+                        <input type="text" name="lastname" placeholder="Lastname" ng-model="signupData.lastname" required>
+                        <p ng-show="signupForm.lastname.$invalid && !signupForm.lastname.$pristine" class="help-block">Enter a valid lastname.</p>
+                    </div>
+                    <div class="field">
+                        <label>Email</label>
+                        <input type="email" name="email" placeholder="Email" ng-model="signupData.email" required>
+                        <p ng-show="signupForm.email.$invalid && !signupForm.lastname.$pristine" class="help-block">Enter a valid email.</p>
+                    </div>
+                    <div class="field">
+                        <label>Password</label>
+                        <input type="password" name="password" placeholder="Password" ng-model="signupData.password" required>
+                        <p ng-show="signupForm.password.$invalid && !signupForm.password.$pristine" class="help-block">Enter a valid password.</p>
+                    </div>
+                    <div class="ui buttons">
+                        <button class="ui button" ng-click="goHome()">Cancel</button>
+                        <div class="or"></div>
+                        <button class="ui positive button" ng-class="{ 'disabled' : signupForm.$invalid}" ng-click="signup();">Signup</button>
+                        <div class="or"></div>
+                        <button class="ui negative button" ng-click="switchView()">Login</button>
+                    </div>
                 </form>
             </div>
         </div>

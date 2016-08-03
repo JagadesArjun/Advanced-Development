@@ -2,61 +2,78 @@
 
     var mainApp = angular.module("mainApp", ['ngRoute', 'ngCookies']);
     mainApp.config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.
-
-            when('/login', {
-                resolve: {
-                    "check": function (access, $location) {
-                        if (access.checkIfLoginNeed() === 'True') {
-                            console.log("success");
-                            $location.path('/home');
-                        } else {
-                            $location.path('/login');
-                        }
+        $routeProvider.when('/account', {
+            resolve: {
+                "check": function (access, $location) {
+                    if (access.checkIfLoginNeed() === 'True') {
+                        console.log("success");
+                        $location.path('/home');
+                    } else {
+                        $location.path('/account');
                     }
-                },
-                templateUrl: 'templates/login.html',
-                controller: 'loginController'
+                }
+            },
+            templateUrl: 'templates/login.html',
+            controller: 'loginController'
 
-            }).
-
-            when('/home', {
-                templateUrl: 'templates/home.html',
-                controller: 'homeController'
-            }).
-
-            when('/type/:name/:type', {
-                templateUrl: 'templates/type.html',
-                controller: 'typeController'
-            }).
-
-            when('/about', {
-                templateUrl: 'templates/about.html',
-                controller: 'aboutController'
-            }).
-
-            when('/logout', {
-                controller: 'logoutController'
-            }).
-
-            otherwise({
-                redirectTo: '/login'
-            });
+        }).when('/home', {
+            templateUrl: 'templates/home.html',
+            controller: 'homeController'
+        }).when('/type/:name/', {
+            templateUrl: 'templates/type.html',
+            controller: 'typeController'
+        }).when('/about', {
+            templateUrl: 'templates/about.html',
+            controller: 'aboutController'
+        }).when('/logout', {
+            controller: 'logoutController'
+        }).otherwise({
+            redirectTo: '/login'
+        });
     }]);
 
     mainApp.controller('loginController', ['$scope', '$http', '$location', 'bec', 'sCookie', 'access', function ($scope, $http, $location, bec, sCookie, access) {
+        $scope.goHome = function () {
+            $location.path('/home/');
+        };
+        $scope.view = true;
+        $scope.switchView = function () {
+            $scope.view = !$scope.view;
+        };
+        if (access.checkIfLoginNeed() === 'True') {
+            console.log("success");
+        }else {
+            console.log("failure");
+        }
+        $scope.loginData = {};
         $scope.login = function () {
-            if (access.checkIfLoginNeed() === 'True') {
-                $location.path('/home');
-            }
-            var logdata = {'email': $scope.emailId, 'password': $scope.password};
+            var logdata = {'email': $scope.loginData.emailId, 'password': $scope.loginData.password};
             bec.post('login', logdata).success(function (resp_data) {
                 if (resp_data.status === 'complete') {
                     sCookie.put('email', resp_data.email);
                     sCookie.put('token', resp_data.token);
                     $location.path('/home/');
                 } else {
-                    $location.path('/login/');
+                    $location.path('/account/');
+                }
+            });
+        };
+        $scope.signupData = {};
+        $scope.signup = function () {
+            var signupdata = {
+                "username": $scope.signupData.username,
+                "password": $scope.signupData.password,
+                "firstname": $scope.signupData.firstname,
+                "lastname": $scope.signupData.lastname,
+                "email": $scope.signupData.email
+            };
+            bec.post('signup', signupdata).success(function (resp_data) {
+                if (resp_data.status === 'complete') {
+                    sCookie.put('email', resp_data.email);
+                    sCookie.put('token', resp_data.token);
+                    $location.path('/home/');
+                } else {
+                    $location.path('/account/');
                 }
             });
         };
@@ -102,8 +119,7 @@
     mainApp.controller('typeController', ['$rootScope', '$scope', '$route', '$routeParams', function ($rootScope, $scope, $route, $routeParams) {
         $scope.routeParams = {};
         $scope.routeParams.name = $routeParams.name;
-        $scope.routeParams.type = $routeParams.type;
-        if ($scope.routeParams.name === "hospital" && $scope.routeParams.type === "ent") {
+        if ($scope.routeParams.name === "hospital") {
             $scope.outPutData = [{
                 "name": "xyz",
                 "type": "hospital",
@@ -178,6 +194,8 @@
                     {"url": "images/theater.jpg"},
                     {"url": "images/theater.jpg"}]
             }];
+        } else {
+            $scope.outPutData = [];
         }
 
     }]);

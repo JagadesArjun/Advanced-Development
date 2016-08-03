@@ -4,7 +4,6 @@
 }
 .dropdown-header{
     height: 60px;
-    width: 5%;
     color: black;
     border-right: 1px solid #d7d7d7;
     border-left: 1px solid #d7d7d7;
@@ -78,4 +77,8 @@
 }
 .show-back{
     display: none;
+}
+.sidebar-account-button{
+    width: 100%;
+    margin-top: 20px;
 }

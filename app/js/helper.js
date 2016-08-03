@@ -33,28 +33,22 @@ mainApp.factory('sCookie', ['$cookies', '$cookieStore', function ($cookies, $coo
 mainApp.factory('access', ['$http', 'sCookie', 'bec', function ($http, sCookie, bec) {
     return {
         checkIfLoginNeed: function () {
-            bec.get('check_login').success(function (resp_data) {
-                if (resp_data.status === 'complete') {
-                    return "True";
-                } else {
-                    return "False";
-                }
-            });
+            return bec.get('get_user_data');
         }
     }
 }]);
-mainApp.factory('logout', ['$cookies', '$cookieStore', '$location', 'logger', function ($cookies, $cookieStore, $location, logger) {
+mainApp.factory('logout', ['$cookies', '$cookieStore', '$location', '_logger', function ($cookies, $cookieStore, $location, _logger) {
     return {
         done: function(){
             $cookieStore.put('email', undefined);
             $cookieStore.put('token', undefined);
             $location.path('/home');
-            logger.info("Successfully logged out");
+            _logger.info("Successfully logged out");
             return "Done"
         }
     }
 }]);
-mainApp.factory('logger', ['$cookies', '$cookieStore', '$location', function ($cookies, $cookieStore, $location) {
+mainApp.factory('_logger', ['$cookies', '$cookieStore', '$location', function ($cookies, $cookieStore, $location) {
     return {
         info: function(data){
             console.log('Info: '+data);

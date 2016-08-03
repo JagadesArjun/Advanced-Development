@@ -4,13 +4,14 @@
     <title>html</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bower_components/bootstrap-css/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/semantic-ui/dist/semantic.min.css">
     <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 <div ng-app="mainApp">
     <headerdirective></headerdirective>
-    <div class="content-con">
+    <div class="pusher">
         <div ng-view></div>
     </div>
 </div>
@@ -20,11 +21,18 @@
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
 <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+<script src="bower_components/angular-messages/angular-messages.min.js"></script>
+<script src="bower_components/angular-material/angular-material.min.js"></script>
+<script src="bower_components/gsap/src/minified/TweenMax.min.js"></script>
+<script src="bower_components/semantic-ui/dist/semantic.min.js"></script>
 
 <script src="js/index.js"></script>
 <script src="js/helper.js"></script>
 <script src="js/directive/header_directive.js"></script>
 <script src="js/directive/dropdown_directive.js"></script>
 <script src="js/directive/tile_directive.js"></script>
+<script src="js/directive/loader_directive.js"></script>
 </body>
 </html>

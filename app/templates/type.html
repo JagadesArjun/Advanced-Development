@@ -1,8 +1,12 @@
 <div class="type">
-    <div class="margin-top-60px">
+    <div>
         <div class="type-side-bar">
-            <div class="type-side-bar-header">
-                {{routeParams.name}}<span class="size-20px"> / </span>{{routeParams.type}}
+            <div class="type-side-bar-header" align="center">
+                <div class="ui breadcrumb">
+                    <a class="section" ng-if="routeParams.name">{{routeParams.name}}</a>
+                    <div class="divider" ng-if="routeParams.type"> / </div>
+                    <a class="section" ng-if="routeParams.type">{{routeParams.type}}</a>
+                </div>
             </div>
         </div>
         <div class="type-body">

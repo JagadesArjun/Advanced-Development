@@ -15,12 +15,18 @@
     "angular-resource": "~1.2.16",
     "angular-route": "~1.2.14",
     "angular-flot": "^0.0.6",
+    "angular-material": "latest",
+    "angular-messages": "latest",
+    "angular-aria": "latest",
+    "angular-animate": "latest",
     "bootstrap": "latest",
     "jquery-ui": "~1.11.2",
     "jquery": "~2.2.0",
     "bootstrap-sass-official": "3.3.x",
     "angular-bootstrap": "~0.12.1",
-    "bootstrap-css": "latest"
+    "bootstrap-css": "latest",
+    "gsap": "latest",
+    "semantic-ui": "latest"
   },
   "devDependencies": {
   },

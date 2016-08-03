@@ -60,39 +60,39 @@
 .tile-status-open {
   width: 100px;
   height: 20px;
-  float: right;
   background-color: green;
   color: white;
   font-weight: bold;
   border-radius: 2px;
-  box-shadow: 0px 1px 3px #888888; }
+  box-shadow: 0px 1px 3px #888888;
+  padding: 2px; }
 
 .tile-status-too-close {
   width: 100px;
   height: 20px;
-  float: right;
   background-color: orangered;
   color: white;
   font-weight: bold;
   border-radius: 2px;
-  box-shadow: 0px 1px 3px #888888; }
+  box-shadow: 0px 1px 3px #888888;
+  padding: 2px; }
 
 .tile-status-closed {
   width: 100px;
   height: 20px;
-  float: right;
   background-color: #000000;
   color: white;
   font-weight: bold;
   border-radius: 2px;
-  box-shadow: 0px 1px 3px #888888; }
+  box-shadow: 0px 1px 3px #888888;
+  padding: 2px; }
 
 .tile-status-leave {
   width: 100px;
   height: 20px;
-  float: right;
   background-color: white;
   color: black;
   font-weight: bold;
   border-radius: 2px;
-  box-shadow: 0px 1px 3px #888888; }
+  box-shadow: 0px 1px 3px #888888;
+  padding: 2px; }

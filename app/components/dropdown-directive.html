@@ -1,45 +1,14 @@
 <div class="dropdown-header" ng-click="dropdownVisible();">
-    <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+    <i class="huge content icon"></i>
 </div>
-<div class="dropdown-body" ng-class="{'dropdown-show':dropdown_visible}">
-    <div class="dropdown-list">
-        <div class="dropdown-list-data" ng-click="goHome();">
-            <div>
-                <img class="dropdown-image" src="images/home.png">
-            </div>
-            <div class="dropdown-list-style" align="center">
-                Home
-            </div>
-        </div>
-    </div>
-    <div class="dropdown-list" ng-repeat="data in dropDownData">
-        <div class="dropdown-list-data" ng-click="selectListData(data.name);">
-            <div>
-                <img class="dropdown-image" src="{{data.url}}">
-            </div>
-            <div class="dropdown-list-style" align="center">
-                {{ data.name }}
-            </div>
-        </div>
-    </div>
-</div>
-<div class="dropdown-body margn-left-565" ng-class="{'dropdown-show':dropdown_slect_visible}">
-    <div class="part2-dropdown-header" align="center">
-        <span class="glyphicon glyphicon-chevron-left show-back" aria-hidden="true" ng-click="goBackDropDown();"></span>
-        {{selectListName}}
-    </div>
-    <div class="part2-dropdown-body">
-        <div class="height-290">
-            <div class="dropdown-list" ng-repeat="data in selectCategory">
-                <div class="dropdown-list-data" ng-click="selectpartData(selectListName,data.type);">
-                    <div>
-                        <img class="dropdown-image" src="{{data.url}}">
-                    </div>
-                    <div class="dropdown-list-style" align="center">
-                        {{ data.type }}
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="ui sidebar inverted vertical menu">
+    <a class="item" ng-click="goHome();">
+        Home
+    </a>
+    <a class="item" ng-repeat="data in dropDownData" ng-click="selectListData(data.name);">
+        {{ data.name }}
+    </a>
+    <div class="sidebar-account-button" align="center">
+        <button class="positive ui button" ng-click="goAccount();">Account</button>
     </div>
 </div>
