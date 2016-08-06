@@ -3,6 +3,8 @@
         <div class="type-side-bar">
             <div class="type-side-bar-header" align="center">
                 <div class="ui breadcrumb">
+                    <a class="section" href="#/home">Home</a>
+                    <div class="divider" ng-if="routeParams.name"> / </div>
                     <a class="section" ng-if="routeParams.name">{{routeParams.name}}</a>
                     <div class="divider" ng-if="routeParams.type"> / </div>
                     <a class="section" ng-if="routeParams.type">{{routeParams.type}}</a>

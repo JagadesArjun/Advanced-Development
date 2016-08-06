@@ -10,31 +10,28 @@ mainApp.directive('dropdown', ['$document', '$location', function ($document, $l
         templateUrl: "components/dropdown-directive.html",
         link: function (scope, element, attr) {
             scope.dropDownData = scope.data;
+            scope.totalRegisteredShop = "1000";
             scope.goHome = function () {
-                $('.ui.sidebar')
-                    .sidebar('hide')
-                ;
+                $('.ui.sidebar').sidebar('hide');
                 $location.path('/home/');
             };
             scope.goAccount = function () {
-                $('.ui.sidebar')
-                    .sidebar('hide')
-                ;
+                $('.ui.sidebar').sidebar('hide');
                 $location.path('/account/');
             };
             scope.dropdownVisible = function () {
-                $('.ui.sidebar')
-                    .sidebar('toggle')
-                ;
+                $('.ui.sidebar').sidebar('toggle');
             };
             scope.dropdown_slect_visible = false;
             scope.selectListData = function (name) {
-                $('.ui.sidebar')
-                    .sidebar('hide')
-                ;
+                $('.ui.sidebar').sidebar('hide');
                 scope.dropdown_slect_visible = true;
                 scope.selectListName = name;
-                $location.path('/type/' + name + '/' );
+                $location.path('/type/' + name + '/');
+            };
+            scope.goRegisterShop = function () {
+                $('.ui.sidebar').sidebar('hide');
+                $location.path('/register_shop/');
             };
         }
     }

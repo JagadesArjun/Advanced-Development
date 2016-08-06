@@ -381,6 +381,13 @@ body {
   overflow-y: auto;
   margin: auto; }
 
+.padding-20px {
+  padding: 20px; }
+
+.background-color-type {
+  background-color: #e5e5e5;
+  border-radius: 5px; }
+
 .loader {
   border: 10px solid #f3f3f3;
   border-radius: 50%;

@@ -9,6 +9,16 @@
         {{ data.name }}
     </a>
     <div class="sidebar-account-button" align="center">
+        <div class="ui labeled button" tabindex="0">
+            <div class="ui red button" ng-click="goRegisterShop();">
+                <i class="shop icon"></i> Register Shop
+            </div>
+            <a class="ui basic red left pointing label">
+                {{totalRegisteredShop}}
+            </a>
+        </div>
+    </div>
+    <div class="sidebar-account-button" align="center">
         <button class="positive ui button" ng-click="goAccount();">Account</button>
     </div>
 </div>

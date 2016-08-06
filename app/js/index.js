@@ -19,6 +19,9 @@
         }).when('/home', {
             templateUrl: 'templates/home.html',
             controller: 'homeController'
+        }).when('/register_shop', {
+            templateUrl: 'templates/register-shop.html',
+            controller: 'registerShopController'
         }).when('/type/:name/', {
             templateUrl: 'templates/type.html',
             controller: 'typeController'
@@ -28,7 +31,7 @@
         }).when('/logout', {
             controller: 'logoutController'
         }).otherwise({
-            redirectTo: '/login'
+            redirectTo: '/home'
         });
     }]);
 
@@ -42,7 +45,7 @@
         };
         if (access.checkIfLoginNeed() === 'True') {
             console.log("success");
-        }else {
+        } else {
             console.log("failure");
         }
         $scope.loginData = {};
@@ -114,6 +117,10 @@
             };
             console.log(sa);
         }
+    });
+
+    mainApp.controller('registerShopController', function ($scope) {
+
     });
 
     mainApp.controller('typeController', ['$rootScope', '$scope', '$route', '$routeParams', function ($rootScope, $scope, $route, $routeParams) {
